@@ -20,20 +20,20 @@ export default class SmileMobile extends Component {
     const mappedNav = nav.map((item, index) => {
       return (
         <Button key={index} style={styles.buttons}>
-          <View style={styles.text}>
-            <Text >{item}</Text>
+          <View style={styles.methods}>
+            <Text style={styles.text}>{item}</Text>
           </View>
         </Button>
       )
     })
     return (
-      <View>
+      <View style={styles.body}>
         <View style={styles.container}>
-          <Image style={styles.image} source={require('./imgs/mills.png')} />
-          <Text style={styles.name}> Millie Chan </Text>
-          <Text style={styles.handle}> @mireechan </Text>
+          <Image style={styles.image} source={require('./imgs/nick.png')} />
         </View>
         <View style={styles.container2}>
+          <Text style={styles.name}> Nick Davidson </Text>
+          <Text style={styles.handle}> Software Engineer </Text>
           {mappedNav}
         </View>
       </View>
@@ -42,15 +42,19 @@ export default class SmileMobile extends Component {
 }
 
 const styles = StyleSheet.create({
+  body: {
+    backgroundColor: 'whitesmoke'
+  },
   container: {
-    backgroundColor: '#48BBEC',
-    paddingBottom: 10
+    flex: .8,
+    backgroundColor: '#fe8453'
   },
   container2: {
-    marginTop: 30,
-    // backgroundColor: '#48BBEC',
+    // height: 400,
+    // paddingTop: 25,
+    // backgroundColor: '#fe8453',
     // paddingBottom: 10,
-    flex: 1,
+    flex: 3,
     flexDirection: 'column',
     // justifyContent: 'center'
     // alignItems: 'center',
@@ -58,31 +62,39 @@ const styles = StyleSheet.create({
   },
   name: {
     alignSelf: 'center',
-    fontSize: 21,
-    marginTop: 10,
+    fontSize: 26,
+    fontWeight: 'bold',
+    marginTop: 100,
     marginBottom: 5,
-    color: 'white'
+    color: '#7c7a79'
   },
   handle: {
+    marginBottom: 40,
     alignSelf: 'center',
-    fontSize: 16,
-    color: 'white'
+    fontSize: 20,
+    color: '#7c7a79'
   },
   image: {
-    height: 225,
-    width: 225,
-    borderRadius: 112.5,
-    marginTop: 50,
+    height: 200,
+    width: 200,
+    borderWidth: 10,
+    borderColor: '#fe8453',
+    borderRadius: 100,
+    marginTop: 40,
     alignSelf: 'center'
   },
   buttons: {
-    backgroundColor: 'red',
-    width: 300
+    backgroundColor: '#fe8453',
+    width: 300,
+    borderWidth: 0
   },
-  text: {
-    flex: 1,
+  methods: {
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  text: {
+    fontSize: 18,
+    color: 'white'
   }
 });
 
